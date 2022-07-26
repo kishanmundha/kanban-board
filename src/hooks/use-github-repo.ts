@@ -8,7 +8,7 @@ export function useGithubRepo(url: string) {
 
   const urlInfo = useMemo(() => {
     const regex = /^https:\/\/github.com\/([\w-]+)\/([\w-]+)/;
-    const match = url.match(regex);
+    const match = url?.match(regex);
     if (!match) {
       return {
         valid: false,

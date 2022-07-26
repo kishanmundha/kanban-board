@@ -7,7 +7,7 @@ const GithubIssuePage: React.FC = () => {
   const navigate = useNavigate();
   const query = useMemo(() => new URLSearchParams(search), [search]);
   const url = useMemo(() => query.get('url') as string, [query]);
-  const [inputUrl, setInputUrl] = useState(url);
+  const [inputUrl, setInputUrl] = useState(url || '');
 
   const { issues, repoUrl, account, repoName } = useGithubRepo(url);
 
